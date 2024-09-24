@@ -13,17 +13,17 @@
     // Criar contato
     if($data["type"] === "create") {
 
-      $name = $data["name"];
-      $phone = $data["phone"];
-      $observations = $data["observations"];
+      $nome = $data["nome"];
+      $tipo = $data["tipo"];
+      $observacoes = $data["observacoes"];
 
-      $query = "INSERT INTO contacts (name, phone, observations) VALUES (:name, :phone, :observations)";
+      $query = "INSERT INTO Animal (nome, tipo, observacoes) VALUES (:nome, :tipo, :observacoes)";
 
       $stmt = $conn->prepare($query);
 
-      $stmt->bindParam(":name", $name);
-      $stmt->bindParam(":phone", $phone);
-      $stmt->bindParam(":observations", $observations);
+      $stmt->bindParam(":nome", $nome);
+      $stmt->bindParam(":tipo", $tipo);
+      $stmt->bindParam(":observacoes", $observacoes);
 
       try {
 
@@ -38,20 +38,20 @@
 
     } else if($data["type"] === "edit") {
 
-      $name = $data["name"];
-      $phone = $data["phone"];
-      $observations = $data["observations"];
+      $nome = $data["nome"];
+      $tipo = $data["tipo"];
+      $observacoes = $data["observacoes"];
       $id = $data["id"];
 
-      $query = "UPDATE contacts 
-                SET name = :name, phone = :phone, observations = :observations 
-                WHERE id = :id";
+      $query = "UPDATE animal 
+                SET Nome = :nome, Tipo = :tipo, Observacoes = :observacoes 
+                WHERE CodAnimal = :id";
 
       $stmt = $conn->prepare($query);
 
-      $stmt->bindParam(":name", $name);
-      $stmt->bindParam(":phone", $phone);
-      $stmt->bindParam(":observations", $observations);
+      $stmt->bindParam(":nome", $nome);
+      $stmt->bindParam(":tipo", $tipo);
+      $stmt->bindParam(":observacoes", $observacoes);
       $stmt->bindParam(":id", $id);
 
       try {
@@ -69,7 +69,7 @@
 
       $id = $data["id"];
 
-      $query = "DELETE FROM contacts WHERE id = :id";
+      $query = "DELETE FROM Animal WHERE CodAnimal = :id";
 
       $stmt = $conn->prepare($query);
 
@@ -103,7 +103,7 @@
     // Retorna o dado de um contato
     if(!empty($id)) {
 
-      $query = "SELECT * FROM contacts WHERE id = :id";
+      $query = "SELECT * FROM Animal WHERE CodAnimal = :id";
 
       $stmt = $conn->prepare($query);
 
@@ -111,20 +111,20 @@
 
       $stmt->execute();
 
-      $contact = $stmt->fetch();
+      $animal = $stmt->fetch();
 
     } else {
 
       // Retorna todos os contatos
-      $contacts = [];
+      $animais = [];
 
-      $query = "SELECT * FROM contacts";
+      $query = "SELECT * FROM Animal";
 
       $stmt = $conn->prepare($query);
 
       $stmt->execute();
       
-      $contacts = $stmt->fetchAll();
+      $animais = $stmt->fetchAll();
 
     }
 

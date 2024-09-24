@@ -23,16 +23,17 @@
   <!-- CSS -->
   <link rel="stylesheet" href="<?= $BASE_URL ?>css/styles.css">
 </head>
-<body>
+<body style="background-color: #E9E2E2;">
   <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #4AB8CC;">
       <a class="navbar-brand" href="<?= $BASE_URL ?>index.php">
-        <img src="<?= $BASE_URL ?>img/logo.svg" alt="Agenda">
+        <img src="<?= $BASE_URL ?>img/clinica.jpeg" alt="Agenda">
       </a>
       <div>
         <div class="navbar-nav">
-          <a class="nav-link active" id="home-link" href="<?= $BASE_URL ?>index.php">Agenda</a>
-          <a class="nav-link active" href="<?= $BASE_URL ?>create.php">Adicionar Contato</a>
+        <a class="nav-link active" id="home-link" href="<?= $BASE_URL ?>index.php">Pets castro</a>
+          <a class="nav-link active" id="home-link" href="<?= $BASE_URL ?>index.php">Cadastro de Animal</a>
+          <a class="nav-link active" href="<?= $BASE_URL ?>create.php">Adicionar Bicho</a>
         </div>
       </div>
     </nav>

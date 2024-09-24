@@ -1,9 +1,9 @@
 <?php
 
   $host = "localhost";
-  $dbname = "agenda";
+  $dbname = "ClinicaVeterinaria";
   $user = "root";
-  $pass = "root";
+  $pass = "";
 
   try {
 

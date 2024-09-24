@@ -1,10 +1,17 @@
 .navbar-brand img {
-  width: 50px;
+  width: 200px;
+  
 }
+
+
+.navbar-brand{
+  background-color: #4dbed1;
+}
+
 
 #main-title {
   text-align: center;
-  margin: 15px 0 30px;
+  margin: 25px 0 30px;
 }
 
 /* HOME */
@@ -15,7 +22,7 @@
 
 #contacts-table thead {
   color: #FFF;
-  background-color: #007BFF;
+  background-color: #4AB8CC;
 }
 
 .col-id {
@@ -33,11 +40,11 @@
 }
 
 .check-icon {
-  color: #1E7E34;
+  color: #1e7e34;
 }
 
 .edit-icon {
-  color: #007BFF;
+  color: #000000;
 }
 
 .delete-form {
@@ -51,7 +58,7 @@
 }
 
 .delete-icon {
-  color: #BD2130;
+  color: #ff0019;
 }
 
 #empty-list-text {
@@ -86,14 +93,16 @@
 }
 
 #back-link {
-  border: 1px solid #007BFF;
-  color: #007BFF;
+  border: 1px solid #4AB8CC;
+  color: #4AB8CC;
   border-radius: 4px;
   padding: 5px;
+  
 }
 
 #back-link:hover {
   text-decoration: none;
+  
 }
 
 /* CREATE */
